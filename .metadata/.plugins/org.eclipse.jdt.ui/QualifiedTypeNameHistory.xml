@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="dev.quest.main.Launcher"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="dev.quest.main.gfx.ImageLoader"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="dev.quest.main.states.State"/>
+<fullyQualifiedTypeName name="dev.quest.main.states.MenuState"/>
+<fullyQualifiedTypeName name="dev.quest.main.entities.Entity"/>
+<fullyQualifiedTypeName name="dev.quest.main.input.KeyManager"/>
+</qualifiedTypeNameHistroy>
