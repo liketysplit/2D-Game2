@@ -2,29 +2,36 @@ package dev.quest.main.states;
 
 import java.awt.Graphics;
 
-import dev.quest.main.Game;
+import dev.quest.main.Handler;
 import dev.quest.main.entities.creatures.Player;
+import dev.quest.main.worlds.World;
 
 public class GameState extends State{
 
 	
-	private Player a;
+	private Player player;
+	private World world;
 	
-	public GameState(Game game){
-		super(game);
-		a = new Player(game, 100, 100);
+	public GameState(Handler handler){
+		super(handler);
+		world = new World(handler, "res/worlds/world1.txt");
+		handler.setWorld(world);
+		player = new Player(handler, 100, 100);
+		
 	}
 	
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
-		a.tick();
+
+		world.tick();
+		player.tick();
+
 	}
 
 	@Override
 	public void render(Graphics g) {
-		// TODO Auto-generated method stub
-		a.render(g);
+		world.render(g);
+		player.render(g);
 	}
 
 }

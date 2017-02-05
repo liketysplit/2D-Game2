@@ -1,0 +1,64 @@
+package dev.quest.main.entities.creatures;
+
+import java.awt.Graphics;
+
+import dev.quest.main.Handler;
+import dev.quest.main.gfx.Animation;
+import dev.quest.main.gfx.Assets;
+
+public class Player extends Creature{
+	
+	private Animation walkDown,walkUp,walkRight,walkLeft;
+	
+	
+	public Player(Handler handler, float x, float y) {
+		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
+		
+		boundingBox.x = 8;
+		boundingBox.y = 16;
+		boundingBox.width = 16;
+		boundingBox.height = 16;
+		
+		//Animations
+		walkDown = new Animation(250, Assets.player_down);
+		walkUp = new Animation(250, Assets.player_up);
+		walkRight = new Animation(250, Assets.player_right);
+		walkLeft = new Animation(250, Assets.player_left);
+	}
+
+	@Override
+	public void tick() {
+		//Animations
+		walkDown.tick();
+		
+		//Movement
+		getInput();
+		move();
+		handler.getGameCamera().centerEntity(this);
+	}
+	
+	private void getInput(){
+		xMove = 0;
+		yMove = 0;
+		
+		if(handler.getKeyManager().up)
+			yMove = -speed;
+		if(handler.getKeyManager().down)
+			yMove = speed;
+		if(handler.getKeyManager().left)
+			xMove = -speed;
+		if(handler.getKeyManager().right)
+			xMove = speed;
+	}
+
+	@Override
+	public void render(Graphics g) {
+		g.drawImage(walkDown.getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()), 
+								   (int) (y - handler.getGameCamera().getyOffset()), 
+								   width, height, null);
+//		g.setColor(Color.red);
+//		g.fillRect((int)(x + boundingBox.x -handler.getGameCamera().getxOffset()), 
+//				   (int)(y + boundingBox.y -handler.getGameCamera().getyOffset()), 
+//				   boundingBox.width, boundingBox.height);
+}
+}

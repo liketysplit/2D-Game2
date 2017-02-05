@@ -5,6 +5,7 @@ import java.awt.image.BufferStrategy;
 
 import dev.quest.main.display.Display;
 import dev.quest.main.gfx.Assets;
+import dev.quest.main.gfx.GameCamera;
 import dev.quest.main.input.KeyManager;
 import dev.quest.main.states.GameState;
 import dev.quest.main.states.MenuState;
@@ -13,7 +14,7 @@ import dev.quest.main.states.State;
 public class Game implements Runnable {
 
 	private Display display;
-	public int width, height;
+	private int width, height;
 	public String title;
 	
 	private boolean running = false;
@@ -21,13 +22,19 @@ public class Game implements Runnable {
 	
 	private BufferStrategy bs;
 	private Graphics g;
-
+	
 	//States
 	private State gameState;
 	private State menuState;
 	
 	//Input
 	private KeyManager keyManager;
+	
+	//Camera
+	private GameCamera gameCamera;
+	
+	//Handler
+	private Handler handler;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -41,8 +48,11 @@ public class Game implements Runnable {
 		display.getFrame().addKeyListener(keyManager);
 		Assets.init();
 		
-		gameState = new GameState(this);
-		menuState =  new MenuState(this);
+		handler = new Handler(this);
+		gameCamera = new GameCamera(handler, 0, 0);
+		
+		gameState = new GameState(handler);
+		menuState = new MenuState(handler);
 		State.setState(gameState);
 	}
 	
@@ -67,7 +77,6 @@ public class Game implements Runnable {
 		if(State.getState() != null)
 			State.getState().render(g);
 		
-		
 		//End Drawing!
 		bs.show();
 		g.dispose();
@@ -87,19 +96,19 @@ public class Game implements Runnable {
 		
 		while(running){
 			now = System.nanoTime();
-			delta += (now-lastTime) / timePerTick;
+			delta += (now - lastTime) / timePerTick;
 			timer += now - lastTime;
 			lastTime = now;
 			
 			if(delta >= 1){
-			tick();
-			render();
-			ticks++;
-			delta--;
+				tick();
+				render();
+				ticks++;
+				delta--;
 			}
 			
 			if(timer >= 1000000000){
-				System.out.println("FPS: " + ticks);
+				System.out.println("Ticks and Frames: " + ticks);
 				ticks = 0;
 				timer = 0;
 			}
@@ -111,6 +120,18 @@ public class Game implements Runnable {
 	
 	public KeyManager getKeyManager(){
 		return keyManager;
+	}
+	
+	public GameCamera getGameCamera(){
+		return gameCamera;
+	}
+	
+	public int getWidth(){
+		return width;
+	}
+	
+	public int getHeight(){
+		return height;
 	}
 	
 	public synchronized void start(){

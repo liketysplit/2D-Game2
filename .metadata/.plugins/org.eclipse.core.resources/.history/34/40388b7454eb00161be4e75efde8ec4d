@@ -1,0 +1,82 @@
+package dev.quest.main.gfx;
+
+import java.awt.image.BufferedImage;
+
+public class Assets {
+	
+	private static final int width = 32, height = 32;
+	
+	public static BufferedImage dirt, grass, stone, tree;
+	
+	public static BufferedImage[] player_down;  
+	public static BufferedImage[] player_up;
+	public static BufferedImage[] player_right;
+	public static BufferedImage[] player_left;
+	
+	public static void init(){
+		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/map.png"));
+		SpriteSheet sheet2 = new SpriteSheet(ImageLoader.loadImage("/textures/char.png"));
+		
+		//Tiles
+		stone = sheet.crop(192, 352, width, height);
+		dirt = sheet.crop(64, 0, width, height);
+		grass = sheet.crop(0, 0, width, height);
+		tree = sheet.crop(0, 32, width, height);
+		
+		//Player Down
+		player_down = new BufferedImage[10];
+		player_down[0] = sheet2.crop(0, 640, 110, 128);
+		player_down[1] = sheet2.crop(110, 640, 110, 128);
+		player_down[2] = sheet2.crop(220, 640, 110, 128);
+		player_down[3] = sheet2.crop(330, 640, 110, 128);
+		player_down[4] = sheet2.crop(440, 640, 110, 128);
+		player_down[5] = sheet2.crop(550, 640, 110, 128);
+		player_down[6] = sheet2.crop(660, 640, 110, 128);
+		player_down[7] = sheet2.crop(770, 640, 110, 128);
+		player_down[8] = sheet2.crop(880, 640, 110, 128);
+		player_down[9] = sheet2.crop(990, 640, 110, 128);
+		
+		//Player Left
+		player_left = new BufferedImage[10];
+		player_left[0] = sheet2.crop(0, 768, 110, 128);
+		player_left[1] = sheet2.crop(110, 768, 110, 128);
+		player_left[2] = sheet2.crop(220, 768, 110, 128);
+		player_left[3] = sheet2.crop(330, 768, 110, 128);
+		player_left[4] = sheet2.crop(440, 768, 110, 128);
+		player_left[5] = sheet2.crop(550, 768, 110, 128);
+		player_left[6] = sheet2.crop(660, 768, 110, 128);
+		player_left[7] = sheet2.crop(770, 768, 110, 128);
+		player_left[8] = sheet2.crop(880, 768, 110, 128);
+		player_left[9] = sheet2.crop(990, 768, 110, 128);
+		
+		//Player up
+		player_up = new BufferedImage[10];
+		player_up[0] = sheet2.crop(0, 896, 110, 128);
+		player_up[1] = sheet2.crop(110, 896, 110, 128);
+		player_up[2] = sheet2.crop(220, 896, 110, 128);
+		player_up[3] = sheet2.crop(330, 896, 110, 128);
+		player_up[4] = sheet2.crop(440, 896, 110, 128);
+		player_up[5] = sheet2.crop(550, 896, 110, 128);
+		player_up[6] = sheet2.crop(660, 896, 110, 128);
+		player_up[7] = sheet2.crop(770, 896, 110, 128);
+		player_up[8] = sheet2.crop(880, 896, 110, 128);
+		player_up[9] = sheet2.crop(990, 896, 110, 128);
+		
+		//Player right
+		player_right = new BufferedImage[10];
+		player_right[0] = sheet2.crop(0, 1024, 110, 128);
+		player_right[1] = sheet2.crop(110, 1024, 110, 128);
+		player_right[2] = sheet2.crop(220, 1024, 110, 128);
+		player_right[3] = sheet2.crop(330, 1024, 110, 128);
+		player_right[4] = sheet2.crop(440, 1024, 110, 128);
+		player_right[5] = sheet2.crop(550, 1024, 110, 128);
+		player_right[6] = sheet2.crop(660, 1024, 110, 128);
+		player_right[7] = sheet2.crop(770, 1024, 110, 128);
+		player_right[8] = sheet2.crop(880, 1024, 110, 128);
+		player_right[9] = sheet2.crop(990, 1024, 110, 128);
+		
+
+		
+	}
+
+}

@@ -2,12 +2,12 @@ package dev.quest.main.states;
 
 import java.awt.Graphics;
 
-import dev.quest.main.Game;
+import dev.quest.main.Handler;
 
 public class MenuState extends State {
 	
-	public MenuState(Game game){
-		super(game);
+	public MenuState(Handler handler){
+		super(handler);
 		
 	}
 	

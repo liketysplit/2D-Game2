@@ -2,7 +2,7 @@ package dev.quest.main.states;
 
 import java.awt.Graphics;
 
-import dev.quest.main.Game;
+import dev.quest.main.Handler;
 
 public abstract class State {
 	
@@ -18,11 +18,11 @@ public abstract class State {
 	}
 	
 	//Classes
-	protected Game game;
+	protected Handler handler;
 	
-	public State(Game game){
+	public State(Handler handler){
 		
-		this.game = game;
+		this.handler = handler;
 		
 	}
 	

@@ -1,0 +1,64 @@
+package dev.quest.main.worlds;
+
+import java.awt.Graphics;
+
+import dev.quest.main.Game;
+import dev.quest.main.tiles.Tile;
+import dev.quest.main.utils.Utils;
+
+public class World {
+	
+	private Game game;
+	private int width, height;
+	private int[][] tiles;
+	private int spawnX, spawnY;
+	
+	public World(Game game, String path){
+		this.game = game;
+		loadWorld(path);
+		
+	}
+	
+	public void tick(){
+		
+	}
+	
+	public void render(Graphics g){
+		int xStart = (int) Math.max(0, game.getGameCamera().getxOffset() / Tile.TILE_WIDTH);
+		int xStop = (int) Math.min(width, (game.getGameCamera().getxOffset() + game.getWidth() + 1));
+		int yStart = (int) Math.max(0, game.getGameCamera().getyOffset() / Tile.TILE_HEIGHT);
+		int yStop = (int) Math.min(height, (game.getGameCamera().getyOffset() + game.getHeight() + 1));
+		
+		for(int y = yStart; y < yStop; y ++)
+			for (int x = xStart; x < xStop; x ++)
+				getTile(x, y).render(g, (int)(x * Tile.TILE_WIDTH - game.getGameCamera().getxOffset()), 
+										(int)(y * Tile.TILE_HEIGHT - game.getGameCamera().getyOffset()));
+	}
+	
+	public Tile getTile(int x, int y){
+		
+		Tile t = Tile.tiles[tiles[x][y]];
+		
+		if (t == null)
+		return Tile.dirtTile;
+		
+		return t;
+		
+	}
+	
+	private void loadWorld(String path){
+		String file = Utils.loadFileAsString(path);
+		String [] mapTokens = file.split("\\s+");
+		width = Utils.parseInt(mapTokens[0]);
+		height = Utils.parseInt(mapTokens[1]);
+		spawnX = Utils.parseInt(mapTokens[2]);
+		spawnY = Utils.parseInt(mapTokens[3]);
+		
+		tiles = new int[width][height];
+		
+		for(int y = 0; y < height; y ++)
+			for (int x = 0; x < width; x ++)
+				tiles[x][y] = Utils.parseInt(mapTokens[(x + y * width) + 4]);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;game&apos; in &apos;dev.quest.main.gfx.GameCamera.GameCamera(...)&apos; to &apos;handler&apos;&#x0D;&#x0A;- Original project: &apos;Quest&apos;&#x0D;&#x0A;- Original element: &apos;dev.quest.main.gfx.GameCamera.GameCamera(Game, float, float).game&apos;&#x0D;&#x0A;- Renamed element: &apos;game&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;game&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;dev.quest.main.gfx{GameCamera.java[GameCamera~GameCamera~QGame;~F~F@game!247!255!252!255!QGame;!0!true" name="handler" references="true" stamp="1486263218369" version="1.0"/>
+</session>

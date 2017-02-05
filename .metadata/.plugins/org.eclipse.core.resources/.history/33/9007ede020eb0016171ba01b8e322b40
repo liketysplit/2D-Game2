@@ -1,0 +1,5 @@
+package dev.quest.main.worlds;
+
+public class World {
+
+}

@@ -101,3 +101,188 @@ java.util.ConcurrentModificationException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2017-02-04 12:22:33.232 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-04 12:22:41.681
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\motoc'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.workbench 4 0 2017-02-04 21:02:39.213
+!MESSAGE An unexpected exception was thrown.
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$ValueIterator.next(Unknown Source)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:136)
+	at org.eclipse.ui.internal.WorkbenchWindow.hardClose(WorkbenchWindow.java:1993)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1600)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.Workbench$14.run(Workbench.java:1189)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1171)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2017-02-04 21:02:40.122 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-04 21:02:45.452
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\motoc'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.e4.ui.workbench.swt 4 2 2017-02-04 21:02:48.728
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.e4.ui.workbench.swt".
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:373)
+	at org.eclipse.swt.widgets.Widget.checkParent(Widget.java:293)
+	at org.eclipse.swt.widgets.Widget.<init>(Widget.java:158)
+	at org.eclipse.swt.widgets.Control.<init>(Control.java:109)
+	at org.eclipse.swt.widgets.Scrollable.<init>(Scrollable.java:81)
+	at org.eclipse.swt.widgets.Composite.<init>(Composite.java:96)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:57)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:971)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:640)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1209)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1170)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:400)
+	at edu.stanford.cs106.listeners.PartIdListener.partOpened(PartIdListener.java:40)
+	at edu.stanford.cs106.listeners.PartIdListener.pageOpened(PartIdListener.java:33)
+	at edu.stanford.cs106.listeners.PartIdListener.windowOpened(PartIdListener.java:56)
+	at edu.stanford.cs106.listeners.PartIdListener.<init>(PartIdListener.java:22)
+	at edu.stanford.cs106.listeners.ThreadFilter.init(ThreadFilter.java:19)
+	at edu.stanford.cs106.listeners.Startup.earlyStartup(Startup.java:47)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:90)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2852)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-02-04 21:02:48.745
+!MESSAGE Exception occurred while rendering: org.eclipse.e4.ui.model.application.ui.advanced.impl.PlaceholderImpl@ae2db25 (elementId: org.eclipse.debug.ui.DebugView, tags: [], contributorURI: null) (widget: null, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer@4dd1548e, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (closeable: false)
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.SWT.error(SWT.java:4377)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:373)
+	at org.eclipse.swt.widgets.Widget.checkParent(Widget.java:293)
+	at org.eclipse.swt.widgets.Widget.<init>(Widget.java:158)
+	at org.eclipse.swt.widgets.Control.<init>(Control.java:109)
+	at org.eclipse.swt.widgets.Scrollable.<init>(Scrollable.java:81)
+	at org.eclipse.swt.widgets.Composite.<init>(Composite.java:96)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:57)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:971)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:640)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:746)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:711)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:695)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1209)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1170)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:400)
+	at edu.stanford.cs106.listeners.PartIdListener.partOpened(PartIdListener.java:40)
+	at edu.stanford.cs106.listeners.PartIdListener.pageOpened(PartIdListener.java:33)
+	at edu.stanford.cs106.listeners.PartIdListener.windowOpened(PartIdListener.java:56)
+	at edu.stanford.cs106.listeners.PartIdListener.<init>(PartIdListener.java:22)
+	at edu.stanford.cs106.listeners.ThreadFilter.init(ThreadFilter.java:19)
+	at edu.stanford.cs106.listeners.Startup.earlyStartup(Startup.java:47)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:90)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2852)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

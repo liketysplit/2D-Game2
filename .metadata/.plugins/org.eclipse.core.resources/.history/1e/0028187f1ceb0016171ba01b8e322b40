@@ -1,0 +1,5 @@
+package dev.quest.main.tiles;
+
+public class RockTile extends Tile {
+
+}
