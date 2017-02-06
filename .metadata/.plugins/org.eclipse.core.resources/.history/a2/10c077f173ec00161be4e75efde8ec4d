@@ -42,7 +42,7 @@ public class Assets {
 		
 		//Player Left
 		player_left = new BufferedImage[10];
-		player_left[0] = sheet2.crop(0, 650, 120, 130);
+		player_left[0] = sheet2.crop(0, 780, 120, 130);
 		player_left[1] = sheet2.crop(120, 650, 120, 130);
 		player_left[2] = sheet2.crop(240, 650, 120, 130);
 		player_left[3] = sheet2.crop(360, 650, 120, 130);
